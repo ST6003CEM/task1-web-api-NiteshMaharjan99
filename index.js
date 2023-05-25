@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 
 const app = express()
 
+const restaurant_routes = require('./routes/restaurant_routes')
 const user_routes = require('./routes/user_routes')
 
 mongoose.connect('mongodb://127.0.0.1:27017/restaurantAPI')
@@ -16,6 +17,7 @@ app.get('/', (req, res) => {
     res.send("Hello world")   
 })
 
+app.use('/restaurants',restaurant_routes)
 app.use('/users', user_routes)
 
 // Error handling

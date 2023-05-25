@@ -3,13 +3,18 @@ const mongoose = require('mongoose');
 const restaurantSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
+    required: true
+  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
   },
   tables: [
     {
       number: {
         type: Number,
         required: true,
+        unique: true
       },
       capacity: {
         type: Number,
@@ -30,10 +35,6 @@ const restaurantSchema = new mongoose.Schema({
       },
       price: {
         type: Number,
-        required: true,
-      },
-      category: {
-        type: String,
         required: true,
       },
     },
