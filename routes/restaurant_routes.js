@@ -4,13 +4,15 @@ const router = express.Router();
 
 const Restaurant = require('../model/RestaurantPOS');
 
+const {verifyAdmin} = require('../middleware/auth')
+
 router.route('/')
     .get((req, res, next) => {
         Restaurant.find()
             .then(restaurant => res.json(restaurant))
             .catch(next)
     })
-    .post((req, res, next) => {
+    .post(verifyAdmin, (req, res, next) => {
         Restaurant.create(req.body)
             .then((restaurant) => res.status(201).json(restaurant))
             .catch(err => next(err))
@@ -18,7 +20,7 @@ router.route('/')
     .put((req, res) => {
         res.status(405).json({ error: "PUT request is not allowed" })
     })
-    .delete((req, res, next) => {
+    .delete(verifyAdmin, (req, res, next) => {
         Restaurant.deleteMany()
             .then(reply => res.json(reply))
             .catch(next)
@@ -38,7 +40,7 @@ router.route('/:restaurant_id')
     .post((req, res) => {
         res.status(405).json({ error: 'POST request is not allowed' })
     })
-    .put((req, res, next) => {
+    .put(verifyAdmin, (req, res, next) => {
         Restaurant.findByIdAndUpdate(
             req.params.restaurant_id,
             { $set: req.body },
@@ -46,7 +48,7 @@ router.route('/:restaurant_id')
         ).then(updated => res.json(updated))
             .catch(next)
     })
-    .delete((req, res, next) => {
+    .delete(verifyAdmin, (req, res, next) => {
         Restaurant.findByIdAndDelete(req.params.restaurant_id)
             .then(reply => res.status(204).end())
             .catch(next)
@@ -64,7 +66,7 @@ router.route('/:restaurant_id/tables')
             })
             .catch(next)
     })
-    .post((req, res, next) => {
+    .post(verifyAdmin, (req, res, next) => {
         Restaurant.findById(req.params.restaurant_id)
             .then((restaurant) => {
                 if (!restaurant) {
@@ -87,7 +89,7 @@ router.route('/:restaurant_id/tables')
     .put((req, res) => {
         res.status(405).json({ error: "PUT request is not allowed" })
     })
-    .delete((req, res, next) => {
+    .delete(verifyAdmin,(req, res, next) => {
         Restaurant.findById(req.params.restaurant_id)
             .then((restaurant) => {
                 if (!restaurant) return res.status(404).json({ error: 'restaurant not found ' })
@@ -109,7 +111,7 @@ router.route('/:restaurant_id/tables/:table_id')
                 res.json(table)
             }).catch(next)
     })
-    .put((req, res, next) => {
+    .put(verifyAdmin,(req, res, next) => {
         Restaurant.findById(req.params.restaurant_id)
             .then((restaurant) => {
                 if (!restaurant) return res.status(404).json({ error: 'restaurant not found ' })
@@ -134,7 +136,7 @@ router.route('/:restaurant_id/tables/:table_id')
 
             }).catch(next)
     })
-    .delete((req, res, next) => {
+    .delete(verifyAdmin,(req, res, next) => {
         Restaurant.findById(req.params.restaurant_id)
             .then((restaurant) => {
                 if (!restaurant) return res.status(404).json({ error: 'restaurant not found ' })
@@ -163,7 +165,7 @@ router.route('/:restaurant_id/menu')
             })
             .catch(next)
     })
-    .post((req, res, next) => {
+    .post(verifyAdmin,(req, res, next) => {
         Restaurant.findById(req.params.restaurant_id)
             .then((restaurant) => {
                 if (!restaurant) {
@@ -185,7 +187,7 @@ router.route('/:restaurant_id/menu')
     .put((req, res) => {
         res.status(405).json({ error: "PUT request is not allowed" })
     })
-    .delete((req, res, next) => {
+    .delete(verifyAdmin, (req, res, next) => {
         Restaurant.findById(req.params.restaurant_id)
             .then((restaurant) => {
                 if (!restaurant) return res.status(404).json({ error: 'restaurant not found ' })
@@ -208,7 +210,7 @@ router.route('/:restaurant_id/menu/:menu_id')
                 res.json(Menu)
             }).catch(next)
     })
-    .put((req, res, next) => {
+    .put(verifyAdmin, (req, res, next) => {
         Restaurant.findById(req.params.restaurant_id)
             .then((restaurant) => {
                 if (!restaurant) return res.status(404).json({ error: 'restaurant not found ' })
@@ -233,7 +235,7 @@ router.route('/:restaurant_id/menu/:menu_id')
 
             }).catch(next)
     })
-    .delete((req, res, next) => {
+    .delete(verifyAdmin, (req, res, next) => {
         Restaurant.findById(req.params.restaurant_id)
             .then((restaurant) => {
                 if (!restaurant) return res.status(404).json({ error: 'restaurant not found ' })

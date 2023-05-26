@@ -5,7 +5,11 @@ const mongoose = require('mongoose')
 const app = express()
 
 const restaurant_routes = require('./routes/restaurant_routes')
+
 const user_routes = require('./routes/user_routes')
+
+const {verifyUser} = require('./middleware/auth')
+
 
 mongoose.connect('mongodb://127.0.0.1:27017/restaurantAPI')
 .then(() => console.log('Connected to mongoDB server'))
@@ -17,7 +21,7 @@ app.get('/', (req, res) => {
     res.send("Hello world")   
 })
 
-app.use('/restaurants',restaurant_routes)
+app.use('/restaurants',verifyUser ,restaurant_routes)
 app.use('/users', user_routes)
 
 app.use((err, req, res, next) => {
