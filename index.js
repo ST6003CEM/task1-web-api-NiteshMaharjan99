@@ -20,7 +20,6 @@ app.get('/', (req, res) => {
 app.use('/restaurants',restaurant_routes)
 app.use('/users', user_routes)
 
-// Error handling
 app.use((err, req, res, next) => {
     console.error(err)
     if (err.name === 'ValidationError') res.status(400)

@@ -251,5 +251,97 @@ router.route('/:restaurant_id/menu/:menu_id')
     })
 
 
+// Routes for managing orders
+router.route('/:restaurant_id/orders')
+    .get((req, res, next) => {
+        Restaurant.findById(req.params.restaurant_id)
+            .then((restaurant) => {
+                if (!restaurant) {
+                    res.status(404).json({ error: 'Restaurant not found' })
+                }
+                res.json(restaurant.orders)
+            })
+            .catch(next)
+    })
+    .post((req, res, next) => {
+        Restaurant.findById(req.params.restaurant_id)
+            .then((restaurant) => {
+                if (!restaurant) {
+                    res.status(404).json({ error: 'Restaurant not found' })
+                }
+                const order = {
+                    tableNumber: req.body.tableNumber,
+                    items: req.body.items,
+                    totalAmout:req.body.totalAmout
+                };
+                restaurant.orders.push(order)
+                restaurant.save()
+                    .then((restaurant) => {
+                        res.status(201).json(restaurant.orders[restaurant.orders.length - 1]);
+                    })
+                    .catch(next)
+            })
+            .catch(next)
+    })
+    .put((req, res) => {
+        res.status(405).json({ error: "PUT request is not allowed" })
+    })
+    .delete((req, res, next) => {
+        res.status(405).json({ error: "Delete request is not allowed" })
+    })
+
+
+router.route('/:restaurant_id/orders/:order_id')
+    .get((req, res, next) => {
+        Restaurant.findById(req.params.restaurant_id)
+            .then((restaurant) => {
+                if (!restaurant) return res.status(404).json({ error: 'restaurant not found ' })
+                const order = restaurant.orders.id(req.params.order_id)
+                res.json(order)
+            }).catch(next)
+    })
+    .put((req, res, next) => {
+        Restaurant.findById(req.params.order_id)
+            .then((restaurant) => {
+                if (!restaurant) return res.status(404).json({ error: 'restaurant not found ' })
+                // uncompleted
+
+                // let table = restaurant.tables.id()
+                // if (table.user != req.user.id) {
+                //     return res.status(403).json({ error: 'you are not authorized' })
+                // }
+                restaurant.orders = restaurant.orders.map((r) => {
+                    if (r._id == req.params.order_id) {
+                        r.completed = req.body.completed
+                        r.price = req.body.price
+                        // r.user = req.body.user.id
+                    }
+                    return r
+                })
+
+                restaurant.save()
+                    .then(restaurant => {
+                        res.json(restaurant.orders.id(req.params.order_id))
+                    }).catch(next)
+
+            }).catch(next)
+    })
+    .delete((req, res, next) => {
+        Restaurant.findById(req.params.restaurant_id)
+            .then((restaurant) => {
+                if (!restaurant) return res.status(404).json({ error: 'restaurant not found ' })
+                // let table = restaurant.tables.id()
+                // if (table.user != req.user.id) {
+                //     return res.status(403).json({ error: 'you are not authorized' })
+                // }
+
+                restaurant.orders = restaurant.orders.filter((r) => r._id != req.params.order_id)
+                restaurant.save()
+                    .then(restaurant => {
+                        res.json(restaurant.orders.id(req.params.order_id))
+                    }).catch(next)
+            }).catch(next)
+    })
+
 
 module.exports = router;
