@@ -249,11 +249,11 @@ router.route('/:restaurant_id/orders')
                     res.status(404).json({ error: 'Restaurant not found' })
                 }
                 const tableNumber = req.body.tableNumber;
-                if(!tableNumber) {
+                if (!tableNumber) {
                     res.status(404).json({ error: 'Restaurant not found' })
                 }
-                
-               
+
+
                 const order = {
                     tableNumber: req.body.tableNumber,
                     items: restaurant.menu.map(menu => ({
@@ -326,7 +326,7 @@ router.route('/:restaurant_id/orders/:order_id')
         Restaurant.findById(req.params.restaurant_id)
             .then((restaurant) => {
                 if (!restaurant) return res.status(404).json({ error: 'restaurant not found ' })
-                let order = restaurant.orders.id()
+                let order = restaurant.orders.id(req.params.order_id)
                 if (order.user != req.user.id) {
                     return res.status(403).json({ error: 'you are not authorized' })
                 }

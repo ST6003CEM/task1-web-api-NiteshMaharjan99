@@ -10,12 +10,15 @@ const user_routes = require('./routes/user_routes')
 
 const {verifyUser} = require('./middleware/auth')
 
+const upload = require('./middleware/upload')
+
 
 mongoose.connect('mongodb://127.0.0.1:27017/restaurantAPI')
 .then(() => console.log('Connected to mongoDB server'))
 .catch((err) => console.log(err))
 
 app.use(express.json())
+app.use(express.static('public'))
 
 app.get('/', (req, res) => {
     res.send("Hello world")   
@@ -23,6 +26,12 @@ app.get('/', (req, res) => {
 
 app.use('/restaurants',verifyUser ,restaurant_routes)
 app.use('/users', user_routes)
+
+
+app.post('/images', upload.single('photo'), (req,res) => {
+    res.json(req.file)
+})
+
 
 app.use((err, req, res, next) => {
     console.error(err)
