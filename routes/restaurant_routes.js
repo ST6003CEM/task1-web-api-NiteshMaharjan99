@@ -4,7 +4,7 @@ const router = express.Router();
 
 const Restaurant = require('../model/RestaurantPOS');
 
-const {verifyAdmin} = require('../middleware/auth')
+const { verifyAdmin } = require('../middleware/auth')
 
 router.route('/')
     .get((req, res, next) => {
@@ -89,7 +89,7 @@ router.route('/:restaurant_id/tables')
     .put((req, res) => {
         res.status(405).json({ error: "PUT request is not allowed" })
     })
-    .delete(verifyAdmin,(req, res, next) => {
+    .delete(verifyAdmin, (req, res, next) => {
         Restaurant.findById(req.params.restaurant_id)
             .then((restaurant) => {
                 if (!restaurant) return res.status(404).json({ error: 'restaurant not found ' })
@@ -111,21 +111,14 @@ router.route('/:restaurant_id/tables/:table_id')
                 res.json(table)
             }).catch(next)
     })
-    .put(verifyAdmin,(req, res, next) => {
+    .put(verifyAdmin, (req, res, next) => {
         Restaurant.findById(req.params.restaurant_id)
             .then((restaurant) => {
                 if (!restaurant) return res.status(404).json({ error: 'restaurant not found ' })
-                // uncompleted
-
-                // let table = restaurant.tables.id()
-                // if (table.user != req.user.id) {
-                //     return res.status(403).json({ error: 'you are not authorized' })
-                // }
                 restaurant.tables = restaurant.tables.map((r) => {
                     if (r._id == req.params.table_id) {
                         r.capacity = req.body.capacity
                         r.status = req.body.status
-                        // r.user = req.body.user.id
                     }
                     return r
                 })
@@ -136,15 +129,10 @@ router.route('/:restaurant_id/tables/:table_id')
 
             }).catch(next)
     })
-    .delete(verifyAdmin,(req, res, next) => {
+    .delete(verifyAdmin, (req, res, next) => {
         Restaurant.findById(req.params.restaurant_id)
             .then((restaurant) => {
                 if (!restaurant) return res.status(404).json({ error: 'restaurant not found ' })
-                // let table = restaurant.tables.id()
-                // if (table.user != req.user.id) {
-                //     return res.status(403).json({ error: 'you are not authorized' })
-                // }
-
                 restaurant.tables = restaurant.tables.filter((r) => r._id != req.params.table_id)
                 restaurant.save()
                     .then(restaurant => {
@@ -165,7 +153,7 @@ router.route('/:restaurant_id/menu')
             })
             .catch(next)
     })
-    .post(verifyAdmin,(req, res, next) => {
+    .post(verifyAdmin, (req, res, next) => {
         Restaurant.findById(req.params.restaurant_id)
             .then((restaurant) => {
                 if (!restaurant) {
@@ -214,17 +202,11 @@ router.route('/:restaurant_id/menu/:menu_id')
         Restaurant.findById(req.params.restaurant_id)
             .then((restaurant) => {
                 if (!restaurant) return res.status(404).json({ error: 'restaurant not found ' })
-                // uncompleted
 
-                // let table = restaurant.tables.id()
-                // if (table.user != req.user.id) {
-                //     return res.status(403).json({ error: 'you are not authorized' })
-                // }
                 restaurant.menu = restaurant.menu.map((r) => {
                     if (r._id == req.params.menu_id) {
                         r.name = req.body.name
                         r.price = req.body.price
-                        // r.user = req.body.user.id
                     }
                     return r
                 })
@@ -239,11 +221,6 @@ router.route('/:restaurant_id/menu/:menu_id')
         Restaurant.findById(req.params.restaurant_id)
             .then((restaurant) => {
                 if (!restaurant) return res.status(404).json({ error: 'restaurant not found ' })
-                // let table = restaurant.tables.id()
-                // if (table.user != req.user.id) {
-                //     return res.status(403).json({ error: 'you are not authorized' })
-                // }
-
                 restaurant.menu = restaurant.menu.filter((r) => r._id != req.params.menu_id)
                 restaurant.save()
                     .then(restaurant => {
@@ -271,10 +248,21 @@ router.route('/:restaurant_id/orders')
                 if (!restaurant) {
                     res.status(404).json({ error: 'Restaurant not found' })
                 }
+                const tableNumber = req.body.tableNumber;
+                if(!tableNumber) {
+                    res.status(404).json({ error: 'Restaurant not found' })
+                }
+                
+               
                 const order = {
                     tableNumber: req.body.tableNumber,
-                    items: req.body.items,
-                    totalAmout:req.body.totalAmout
+                    items: restaurant.menu.map(menu => ({
+                        name: menu.name,
+                        price: menu.price,
+                        quantity: req.body.items.find(item => item.name === menu.name).quantity
+                    })),
+                    totalAmount: req.body.items.reduce((total, item) => total + item.price * item.quantity, 0),
+                    user: req.user.id
                 };
                 restaurant.orders.push(order)
                 restaurant.save()
@@ -303,20 +291,26 @@ router.route('/:restaurant_id/orders/:order_id')
             }).catch(next)
     })
     .put((req, res, next) => {
-        Restaurant.findById(req.params.order_id)
+        Restaurant.findById(req.params.restaurant_id)
             .then((restaurant) => {
                 if (!restaurant) return res.status(404).json({ error: 'restaurant not found ' })
-                // uncompleted
 
-                // let table = restaurant.tables.id()
-                // if (table.user != req.user.id) {
-                //     return res.status(403).json({ error: 'you are not authorized' })
-                // }
+                let order = restaurant.orders.id(req.params.order_id)
+                if (order.user != req.user.id) {
+                    return res.status(403).json({ error: 'you are not authorized' })
+                }
                 restaurant.orders = restaurant.orders.map((r) => {
                     if (r._id == req.params.order_id) {
                         r.completed = req.body.completed
-                        r.price = req.body.price
-                        // r.user = req.body.user.id
+                        r.tableNumber = req.body.tableNumber
+                        r.items = restaurant.menu.map(menuItem => ({
+                            name: menuItem.name,
+                            price: menuItem.price,
+                            quantity: req.body.items.find(item => item.name === menuItem.name).quantity
+                        })
+                        )
+                        r.totalAmount = req.body.items.reduce((total, item) => total + item.price * item.quantity, 0)
+
                     }
                     return r
                 })
@@ -332,10 +326,10 @@ router.route('/:restaurant_id/orders/:order_id')
         Restaurant.findById(req.params.restaurant_id)
             .then((restaurant) => {
                 if (!restaurant) return res.status(404).json({ error: 'restaurant not found ' })
-                // let table = restaurant.tables.id()
-                // if (table.user != req.user.id) {
-                //     return res.status(403).json({ error: 'you are not authorized' })
-                // }
+                let order = restaurant.orders.id()
+                if (order.user != req.user.id) {
+                    return res.status(403).json({ error: 'you are not authorized' })
+                }
 
                 restaurant.orders = restaurant.orders.filter((r) => r._id != req.params.order_id)
                 restaurant.save()

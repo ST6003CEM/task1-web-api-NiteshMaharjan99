@@ -5,10 +5,6 @@ const restaurantSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-  },
   tables: [
     {
       number: {
@@ -73,6 +69,11 @@ const restaurantSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
       },
+      user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+      },
+
     },
   ],
 });
