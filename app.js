@@ -6,6 +6,8 @@ const app = express()
 
 const restaurant_routes = require('./routes/restaurant_routes')
 
+const menu_routes = require('./routes/menu_routes')
+
 const user_routes = require('./routes/user_routes')
 
 const {verifyUser} = require('./middlewares/auth')
@@ -25,6 +27,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/restaurants',verifyUser ,restaurant_routes)
+app.use('/menus', menu_routes)
 app.use('/users', user_routes)
 
 

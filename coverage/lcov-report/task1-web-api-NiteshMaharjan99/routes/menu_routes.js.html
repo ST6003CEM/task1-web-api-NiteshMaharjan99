@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for task1-web-api-NiteshMaharjan99/model/User.js</title>
+    <title>Code coverage report for task1-web-api-NiteshMaharjan99/routes/menu_routes.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">task1-web-api-NiteshMaharjan99/model</a> User.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">task1-web-api-NiteshMaharjan99/routes</a> menu_routes.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -83,59 +83,47 @@
 <a name='L18'></a><a href='#L18'>18</a>
 <a name='L19'></a><a href='#L19'>19</a>
 <a name='L20'></a><a href='#L20'>20</a>
-<a name='L21'></a><a href='#L21'>21</a>
-<a name='L22'></a><a href='#L22'>22</a>
-<a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a>
-<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<a name='L21'></a><a href='#L21'>21</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span></td><td class="text"><pre class="prettyprint lang-js">const mongoose = require('mongoose')
+<span class="cline-any cline-yes">3x</span></td><td class="text"><pre class="prettyprint lang-js">const express = require('express')
+const { verifyUser, verifyAdmin } = require('../middlewares/auth')
+const menuController = require('../controllers/menu_controller')
+const upload = require('../middlewares/upload')
 &nbsp;
-const userSchema = new mongoose.Schema({
-    username:{
-        type: String,
-        required: true,
-        minLength: 6,
-        unique: true, 
-    },
-    password:{ 
-        type: String,
-        required: true,
-    },
-    fullname:{
-        type: String,
-        required: true
-    },
-    role:{
-        type: String,
-        enum: ['user', 'admin'],
-        default: 'user',
-    }
-})
+const router = express.Router()
 &nbsp;
-module.exports = new mongoose.model('User', userSchema)</pre></td></tr></table></pre>
+router.use(verifyUser).route('/')
+    .get(menuController.getAllMenus)
+    .post(menuController.createMenu)
+    .delete(verifyAdmin,menuController.deleteAllMenu)
+&nbsp;
+router.use(verifyUser).route('/:menu_id')
+    .get(menuController.getMenuById)
+    .put(menuController.updateMenuById)
+    .delete(menuController.deleteMenuById)
+&nbsp;
+router.route('/uploadImage', upload.single("menuImage"),)
+    .post(menuController.menuImageUpload)
+&nbsp;
+module.exports = router</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

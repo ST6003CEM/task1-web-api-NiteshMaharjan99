@@ -1,10 +1,9 @@
 const Menu = require('../model/Menu');
-const upload = require('../middlewares/upload')
 
 
 // Get all menus
 exports.getAllMenus = (req, res, next) => {
-    Menu.find({ user: req.user.id })
+    Menu.find()
         .then((menus) => res.json(menus))
         .catch(next);
 };
@@ -13,7 +12,7 @@ exports.getAllMenus = (req, res, next) => {
 exports.createMenu = (req, res, next) => {
     const { menuName, price, image } = req.body;
     // const imagePath = req.file ? req.file.path : null; // Get the file path of the uploaded image
-    Menu.create({ menuName, price, image })
+    Menu.create({ menuName, price, image, user: req.user.id })
         .then((menu) => res.status(201).json(menu))
         .catch(next);
 };
@@ -59,7 +58,7 @@ exports.updateMenuById = (req, res, next) => {
 // Delete a menu by ID
 exports.deleteMenuById = (req, res, next) => {
     const query = { _id: req.params.menu_id, user: req.user.id }
-    Note.findOneAndDelete(query)
+    Menu.findOneAndDelete(query)
         .then((menu) => {
             if (!menu) {
                 res.status(404)
@@ -70,9 +69,9 @@ exports.deleteMenuById = (req, res, next) => {
         .catch(next)
 }
 
-exports.menuImageUpload = upload.single("menuImage"), (req, res) => {
+exports.menuImageUpload = (req, res) => {
     if (!req.file) {
         return res.status(400).send({ message: "Please upload a file" });
     }
-    res.json(req.file);
+    res.status(200).json(req.file.filename);
 };
