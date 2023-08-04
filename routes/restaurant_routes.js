@@ -4,7 +4,7 @@ const router = express.Router();
 
 const Restaurant = require('../model/RestaurantPOS');
 
-const { verifyAdmin } = require('../middleware/auth')
+const { verifyAdmin } = require('../middlewares/auth')
 
 router.route('/')
     .get((req, res, next) => {

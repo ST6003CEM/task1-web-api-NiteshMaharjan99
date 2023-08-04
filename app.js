@@ -8,9 +8,9 @@ const restaurant_routes = require('./routes/restaurant_routes')
 
 const user_routes = require('./routes/user_routes')
 
-const {verifyUser} = require('./middleware/auth')
+const {verifyUser} = require('./middlewares/auth')
 
-const upload = require('./middleware/upload')
+const upload = require('./middlewares/upload')
 
 
 mongoose.connect('mongodb://127.0.0.1:27017/restaurantAPI')
