@@ -23,6 +23,17 @@ const orderSchema = new mongoose.Schema(
                 },
             },
         ],
+        // Total order amount
+        totalAmount: {
+            type: Number,
+            required: true,
+        },
+
+        status: {
+            type: String,
+            required: true,
+            default: 'pending',
+        }
     },
     {
         timestamps: true,
