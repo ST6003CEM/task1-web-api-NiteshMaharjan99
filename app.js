@@ -1,17 +1,10 @@
 const express = require('express')
-
 const mongoose = require('mongoose')
-
 const app = express()
 
-const restaurant_routes = require('./routes/restaurant_routes')
-
 const menu_routes = require('./routes/menu_routes')
-
 const user_routes = require('./routes/user_routes')
-
-const {verifyUser} = require('./middlewares/auth')
-
+const order_routes = require('./routes/order_routes')
 const upload = require('./middlewares/upload')
 
 
@@ -26,8 +19,8 @@ app.get('/', (req, res) => {
     res.send("Hello world")   
 })
 
-app.use('/restaurants',verifyUser ,restaurant_routes)
 app.use('/menus', menu_routes)
+app.use('/orders', order_routes)
 app.use('/users', user_routes)
 
 

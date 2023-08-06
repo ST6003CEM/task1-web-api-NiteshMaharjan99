@@ -19,12 +19,4 @@ const menuSchema = new mongoose.Schema({
     }
 })
 
-menuSchema.set('toJSON', {
-    transform: (document, returnedDocument) => {
-        returnedDocument.id = document._id.toString()
-        delete returnedDocument._id
-        delete returnedDocument.__v
-    }
-})
-
 module.exports = mongoose.model("Menu", menuSchema);

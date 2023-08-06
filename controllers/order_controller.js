@@ -8,35 +8,47 @@ exports.getAllOrders = (req, res, next) => {
         .catch(next);
 };
 
-exports.getOrderById = async (req, res) => {
-    try {
+exports.getOrderById = (req, res, next) => {
+    Order.findOne({ _id: req.params.order_id, user: req.user.id })
+        .then((order) => {
+            if (!order) return res.status(404).json({ error: 'Order not found' });
+            res.json(order);
+        })
+        .catch(next);
+};
 
-        const { user, menus, totalAmount, status } = req.body;
-        const order = await Order.create({ user, menus, totalAmount, status });
-        res.status(201).json(order);
-    } catch (err) {
-        res.status(500).json({ error: 'Error creating order' });
-    }
+exports.getOrderByUser = (req, res, next) => {
+    const userid = req.user._id;
+    var arr = []
+    Order.find({ user: userid, })
+        .populate("menuOrdering")
+        .then((data) => {
+            data.map(data => {
+                arr.push({
+                    _id: data._id,
+                    totalAmount: data.menuOrdering.totalAmount,
+                    status: data.menuOrdering.status,
+                })
+            })
+            console.log(arr)
+            res.status(200).json({ success: true, data: arr });
+        }).catch(next)
+
 };
 
 exports.createOrder = (req, res, next) => {
-    Menu.findOne({ id: req.body.menu })
-        .then((menu) => {
-            if (!batch) {
-                return res.status(400).send({ message: "Invalid Menu" });
-            }
-            res.json(menu)
-        }).catch(next);
+    const userid = req.user;
+    const menuOrdering = req.params.id;
 
-    const { menu, totalAmount } = req.body;
-    Order.create({ menu, totalAmount, user: req.user.id })
-        .then((menu) => res.status(201).json(menu))
+
+    Order.create({ menuOrdering, user: userid })
+        .then((menu) => res.status(201).json({ success: true, message: "Ordered Sucessful!!!" }))
         .catch(next);
 };
 
 
 exports.updateOrderById = (req, res, next) => {
-    const query = { _id: req.params.id, user: req.user.id }
+    const query = { _id: req.params.order_id, user: req.user.id }
     const { user, menus, totalAmount, status } = req.body;
     Order.findOneAndUpdate(
         query,
@@ -53,13 +65,18 @@ exports.updateOrderById = (req, res, next) => {
 
 };
 
-exports.deleteOrderById = (req, res, next) => {
-    const query = { _id: req.params.id, user: req.user.id }
-    Order.findOneAndDelete(query);
-    if (!deletedOrder) {
-        return res.status(404).json({ error: 'Order not found' });
-    }
-    res.status(200).json({ message: 'Order deleted successfully' });
+// Delete all order
+exports.deleteAllOrder = (req, res, next) => {
+    Order.deleteMany({})
+        .then((reply) => res.status(204).end())
+        .catch(next)
+}
 
+exports.deleteOrderById = (req, res, next) => {
+    const query = { _id: req.params.order_id1 }
+    Order.findOneAndDelete(query)
+        .then((data) => {
+            res.status(200).json({ message: 'Order Delete sucessful!!!' });
+        }).catch(next)
 };
 

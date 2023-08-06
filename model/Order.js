@@ -5,35 +5,13 @@ const orderSchema = new mongoose.Schema(
         // Reference to the user who placed the order
         user: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'User',
-            required: true,
+            ref: 'User'
         },
         // Array of products in the order
-        menus: [
-            {
-                menu: {
-                    type: mongoose.Schema.Types.ObjectId,
-                    ref: 'Menu',
-                    required: true,
-                },
-                quantity: {
-                    type: Number,
-                    required: true,
-                    min: 1,
-                },
-            },
-        ],
-        // Total order amount
-        totalAmount: {
-            type: Number,
-            required: true,
-        },
-
-        status: {
-            type: String,
-            required: true,
-            default: 'pending',
-        }
+       menuid: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'menuOrdering',
+       },
     },
     {
         timestamps: true,
