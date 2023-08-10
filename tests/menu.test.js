@@ -57,7 +57,7 @@ describe('Menu API Tests', () => {
     test('Registered users should get a menu by ID', async () => {
         const newMenu = await api.post('/menus/').send(menuData).set('authorization', `bearer ${token}`)
         const menuId = newMenu.body.id;
-        await api.get(`/${menuId}`)
+        await api.get(`menus/${menuId}`)
             .set('authorization', `bearer ${token}`)
             .expect(200)
     });
@@ -69,7 +69,7 @@ describe('Menu API Tests', () => {
             menuName: 'Cheeseburger',
             price: 12.99,
         };
-        await api.put(`/${menuId}`).send(updatedMenuData)
+        await api.put(`menus/${menuId}`).send(updatedMenuData)
             .set('authorization', `bearer ${token}`)
             .expect(200)
 
@@ -80,7 +80,7 @@ describe('Menu API Tests', () => {
     test('Registered users should delete a menu by ID', async () => {
         const newMenu = await api.post('/menus/').send(menuData).set('authorization', `bearer ${token}`)
         const menuId = newMenu.body.id;
-        await api.delete(`/${menuId}`)
+        await api.delete(`menus/${menuId}`)
             .set('authorization', `bearer ${token}`)
             .expect(204)
     });

@@ -42,7 +42,7 @@ exports.createOrder = (req, res, next) => {
 
 
     Order.create({ menuOrdering, user: userid })
-        .then((menu) => res.status(201).json({ success: true, message: "Ordered Sucessful!!!" }))
+        .then((order) => res.status(201).json({ success: true, message: "Ordered Sucessful!!!" }))
         .catch(next);
 };
 

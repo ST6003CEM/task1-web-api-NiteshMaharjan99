@@ -1,86 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1691682410744" clover="3.2.0">
-  <project timestamp="1691682410745" name="All files">
-    <metrics statements="310" coveredstatements="199" conditionals="40" coveredconditionals="16" methods="66" coveredmethods="21" elements="416" coveredelements="236" complexity="0" loc="310" ncloc="310" packages="5" files="21" classes="21"/>
+<coverage generated="1691684731029" clover="3.2.0">
+  <project timestamp="1691684731029" name="All files">
+    <metrics statements="310" coveredstatements="201" conditionals="40" coveredconditionals="16" methods="66" coveredmethods="23" elements="416" coveredelements="240" complexity="0" loc="310" ncloc="310" packages="5" files="21" classes="21"/>
     <package name="task1-web-api-NiteshMaharjan99">
       <metrics statements="38" coveredstatements="36" conditionals="4" coveredconditionals="3" methods="6" coveredmethods="4"/>
       <file name="app.js" path="E:\backup files\Web API\Restaurant POS API\task1-web-api-NiteshMaharjan99\app.js">
         <metrics statements="38" coveredstatements="36" conditionals="4" coveredconditionals="3" methods="6" coveredmethods="4"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="2" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="4" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="6" count="3" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="10" count="3" type="stmt"/>
-        <line num="11" count="3" type="stmt"/>
-        <line num="14" count="3" type="stmt"/>
-        <line num="15" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
-        <line num="18" count="3" type="stmt"/>
-        <line num="19" count="3" type="stmt"/>
-        <line num="22" count="3" type="stmt"/>
-        <line num="23" count="3" type="stmt"/>
-        <line num="24" count="3" type="stmt"/>
-        <line num="25" count="3" type="stmt"/>
-        <line num="27" count="3" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
-        <line num="32" count="3" type="stmt"/>
-        <line num="33" count="3" type="stmt"/>
-        <line num="34" count="3" type="stmt"/>
-        <line num="35" count="3" type="stmt"/>
-        <line num="36" count="3" type="stmt"/>
-        <line num="37" count="3" type="stmt"/>
-        <line num="40" count="3" type="stmt"/>
+        <line num="32" count="4" type="stmt"/>
+        <line num="33" count="4" type="stmt"/>
+        <line num="34" count="4" type="stmt"/>
+        <line num="35" count="4" type="stmt"/>
+        <line num="36" count="4" type="stmt"/>
+        <line num="37" count="4" type="stmt"/>
+        <line num="40" count="4" type="stmt"/>
         <line num="41" count="0" type="stmt"/>
-        <line num="45" count="3" type="stmt"/>
+        <line num="45" count="4" type="stmt"/>
         <line num="46" count="7" type="stmt"/>
         <line num="47" count="7" type="cond" truecount="2" falsecount="0"/>
         <line num="48" count="6" type="cond" truecount="1" falsecount="1"/>
         <line num="49" count="7" type="stmt"/>
         <line num="50" count="7" type="stmt"/>
-        <line num="53" count="3" type="stmt"/>
-        <line num="54" count="3" type="stmt"/>
-        <line num="57" count="3" type="stmt"/>
+        <line num="53" count="4" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="57" count="4" type="stmt"/>
       </file>
     </package>
     <package name="task1-web-api-NiteshMaharjan99.controllers">
-      <metrics statements="153" coveredstatements="53" conditionals="16" coveredconditionals="2" methods="46" coveredmethods="7"/>
+      <metrics statements="153" coveredstatements="55" conditionals="16" coveredconditionals="2" methods="46" coveredmethods="9"/>
       <file name="billsController.js" path="E:\backup files\Web API\Restaurant POS API\task1-web-api-NiteshMaharjan99\controllers\billsController.js">
         <metrics statements="14" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="4" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
-        <line num="16" count="3" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
-        <line num="25" count="3" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
       </file>
       <file name="itemController.js" path="E:\backup files\Web API\Restaurant POS API\task1-web-api-NiteshMaharjan99\controllers\itemController.js">
         <metrics statements="29" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="4" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
-        <line num="14" count="3" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
-        <line num="26" count="3" type="stmt"/>
+        <line num="26" count="4" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
@@ -88,38 +88,38 @@
         <line num="34" count="0" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
-        <line num="42" count="3" type="stmt"/>
+        <line num="42" count="4" type="stmt"/>
         <line num="43" count="0" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
         <line num="47" count="0" type="stmt"/>
         <line num="49" count="0" type="stmt"/>
         <line num="50" count="0" type="stmt"/>
-        <line num="54" count="3" type="stmt"/>
+        <line num="54" count="4" type="stmt"/>
       </file>
       <file name="menu_controller.js" path="E:\backup files\Web API\Restaurant POS API\task1-web-api-NiteshMaharjan99\controllers\menu_controller.js">
         <metrics statements="39" coveredstatements="25" conditionals="10" coveredconditionals="2" methods="15" coveredmethods="7"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
-        <line num="15" count="3" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
         <line num="16" count="4" type="stmt"/>
         <line num="18" count="4" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
-        <line num="26" count="3" type="stmt"/>
+        <line num="26" count="4" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
-        <line num="33" count="3" type="stmt"/>
+        <line num="33" count="4" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
         <line num="36" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="37" count="0" type="stmt"/>
-        <line num="43" count="3" type="stmt"/>
+        <line num="43" count="4" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
         <line num="46" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="47" count="0" type="stmt"/>
-        <line num="54" count="3" type="stmt"/>
+        <line num="54" count="4" type="stmt"/>
         <line num="55" count="1" type="stmt"/>
         <line num="57" count="1" type="stmt"/>
         <line num="61" count="1" type="stmt"/>
@@ -127,30 +127,30 @@
         <line num="64" count="1" type="stmt"/>
         <line num="65" count="1" type="stmt"/>
         <line num="67" count="0" type="stmt"/>
-        <line num="74" count="3" type="stmt"/>
+        <line num="74" count="4" type="stmt"/>
         <line num="75" count="1" type="stmt"/>
         <line num="76" count="1" type="stmt"/>
         <line num="78" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="79" count="1" type="stmt"/>
         <line num="80" count="1" type="stmt"/>
         <line num="82" count="0" type="stmt"/>
-        <line num="87" count="3" type="stmt"/>
+        <line num="87" count="4" type="stmt"/>
         <line num="88" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="89" count="0" type="stmt"/>
         <line num="91" count="0" type="stmt"/>
       </file>
       <file name="order_controller.js" path="E:\backup files\Web API\Restaurant POS API\task1-web-api-NiteshMaharjan99\controllers\order_controller.js">
-        <metrics statements="37" coveredstatements="9" conditionals="4" coveredconditionals="0" methods="15" coveredmethods="0"/>
-        <line num="2" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="11" count="3" type="stmt"/>
+        <metrics statements="37" coveredstatements="11" conditionals="4" coveredconditionals="0" methods="15" coveredmethods="2"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
         <line num="14" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="15" count="0" type="stmt"/>
-        <line num="20" count="3" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
@@ -158,12 +158,12 @@
         <line num="27" count="0" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
-        <line num="39" count="3" type="stmt"/>
+        <line num="39" count="4" type="stmt"/>
         <line num="40" count="0" type="stmt"/>
         <line num="41" count="0" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
-        <line num="50" count="3" type="stmt"/>
+        <line num="50" count="4" type="stmt"/>
         <line num="51" count="0" type="stmt"/>
         <line num="52" count="0" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
@@ -171,18 +171,18 @@
         <line num="59" count="0" type="stmt"/>
         <line num="60" count="0" type="stmt"/>
         <line num="62" count="0" type="stmt"/>
-        <line num="69" count="3" type="stmt"/>
+        <line num="69" count="4" type="stmt"/>
         <line num="70" count="0" type="stmt"/>
         <line num="71" count="0" type="stmt"/>
-        <line num="75" count="3" type="stmt"/>
+        <line num="75" count="4" type="stmt"/>
         <line num="76" count="0" type="stmt"/>
         <line num="77" count="0" type="stmt"/>
         <line num="79" count="0" type="stmt"/>
       </file>
       <file name="userController.js" path="E:\backup files\Web API\Restaurant POS API\task1-web-api-NiteshMaharjan99\controllers\userController.js">
         <metrics statements="17" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="4" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
@@ -190,31 +190,31 @@
         <line num="9" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
-        <line num="23" count="3" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
-        <line num="36" count="3" type="stmt"/>
+        <line num="36" count="4" type="stmt"/>
       </file>
       <file name="user_controller.js" path="E:\backup files\Web API\Restaurant POS API\task1-web-api-NiteshMaharjan99\controllers\user_controller.js">
         <metrics statements="17" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
-        <line num="13" count="3" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
-        <line num="20" count="3" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
-        <line num="29" count="3" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
         <line num="31" count="0" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
@@ -224,170 +224,170 @@
       <metrics statements="27" coveredstatements="18" conditionals="8" coveredconditionals="3" methods="6" coveredmethods="2"/>
       <file name="auth.js" path="E:\backup files\Web API\Restaurant POS API\task1-web-api-NiteshMaharjan99\middlewares\auth.js">
         <metrics statements="13" coveredstatements="11" conditionals="6" coveredconditionals="3" methods="3" coveredmethods="2"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="5" count="10" type="stmt"/>
-        <line num="6" count="10" type="cond" truecount="2" falsecount="0"/>
-        <line num="8" count="9" type="stmt"/>
-        <line num="10" count="9" type="stmt"/>
-        <line num="11" count="9" type="cond" truecount="1" falsecount="1"/>
-        <line num="12" count="9" type="stmt"/>
-        <line num="15" count="9" type="stmt"/>
-        <line num="18" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="5" count="14" type="stmt"/>
+        <line num="6" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="13" type="stmt"/>
+        <line num="10" count="13" type="stmt"/>
+        <line num="11" count="13" type="cond" truecount="1" falsecount="1"/>
+        <line num="12" count="13" type="stmt"/>
+        <line num="15" count="13" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
         <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="20" count="0" type="stmt"/>
-        <line num="23" count="3" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
       </file>
       <file name="upload.js" path="E:\backup files\Web API\Restaurant POS API\task1-web-api-NiteshMaharjan99\middlewares\upload.js">
         <metrics statements="14" coveredstatements="7" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
-        <line num="18" count="3" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
         <line num="21" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="22" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
-        <line num="28" count="3" type="stmt"/>
-        <line num="34" count="3" type="stmt"/>
+        <line num="28" count="4" type="stmt"/>
+        <line num="34" count="4" type="stmt"/>
       </file>
     </package>
     <package name="task1-web-api-NiteshMaharjan99.model">
       <metrics statements="22" coveredstatements="22" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="Menu.js" path="E:\backup files\Web API\Restaurant POS API\task1-web-api-NiteshMaharjan99\model\Menu.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="22" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
       </file>
       <file name="Order.js" path="E:\backup files\Web API\Restaurant POS API\task1-web-api-NiteshMaharjan99\model\Order.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="21" count="3" type="stmt"/>
-        <line num="23" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
       </file>
       <file name="User.js" path="E:\backup files\Web API\Restaurant POS API\task1-web-api-NiteshMaharjan99\model\User.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="34" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="34" count="4" type="stmt"/>
       </file>
       <file name="billsModel.js" path="E:\backup files\Web API\Restaurant POS API\task1-web-api-NiteshMaharjan99\model\billsModel.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="41" count="3" type="stmt"/>
-        <line num="43" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="41" count="4" type="stmt"/>
+        <line num="43" count="4" type="stmt"/>
       </file>
       <file name="itemModel.js" path="E:\backup files\Web API\Restaurant POS API\task1-web-api-NiteshMaharjan99\model\itemModel.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="25" count="3" type="stmt"/>
-        <line num="27" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
       </file>
       <file name="userModel.js" path="E:\backup files\Web API\Restaurant POS API\task1-web-api-NiteshMaharjan99\model\userModel.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="24" count="3" type="stmt"/>
-        <line num="26" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="26" count="4" type="stmt"/>
       </file>
     </package>
     <package name="task1-web-api-NiteshMaharjan99.routes">
       <metrics statements="70" coveredstatements="70" conditionals="12" coveredconditionals="8" methods="8" coveredmethods="8"/>
       <file name="billsRoute.js" path="E:\backup files\Web API\Restaurant POS API\task1-web-api-NiteshMaharjan99\routes\billsRoute.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="12" count="3" type="stmt"/>
-        <line num="15" count="3" type="stmt"/>
-        <line num="18" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
       </file>
       <file name="itemRoutes.js" path="E:\backup files\Web API\Restaurant POS API\task1-web-api-NiteshMaharjan99\routes\itemRoutes.js">
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="13" count="3" type="stmt"/>
-        <line num="16" count="3" type="stmt"/>
-        <line num="19" count="3" type="stmt"/>
-        <line num="22" count="3" type="stmt"/>
-        <line num="24" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
       </file>
       <file name="menu_routes.js" path="E:\backup files\Web API\Restaurant POS API\task1-web-api-NiteshMaharjan99\routes\menu_routes.js">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="2" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="4" count="3" type="stmt"/>
-        <line num="6" count="3" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="13" count="3" type="stmt"/>
-        <line num="18" count="3" type="stmt"/>
-        <line num="21" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
       </file>
       <file name="order_routes.js" path="E:\backup files\Web API\Restaurant POS API\task1-web-api-NiteshMaharjan99\routes\order_routes.js">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="2" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="11" count="3" type="stmt"/>
-        <line num="15" count="3" type="stmt"/>
-        <line num="19" count="3" type="stmt"/>
-        <line num="22" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
       </file>
       <file name="userRoutes.js" path="E:\backup files\Web API\Restaurant POS API\task1-web-api-NiteshMaharjan99\routes\userRoutes.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="11" count="3" type="stmt"/>
-        <line num="14" count="3" type="stmt"/>
-        <line num="18" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
       </file>
       <file name="user_routes.js" path="E:\backup files\Web API\Restaurant POS API\task1-web-api-NiteshMaharjan99\routes\user_routes.js">
         <metrics statements="32" coveredstatements="32" conditionals="12" coveredconditionals="8" methods="8" coveredmethods="8"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="11" count="3" type="stmt"/>
-        <line num="13" count="3" type="stmt"/>
-        <line num="15" count="3" type="stmt"/>
-        <line num="18" count="3" type="stmt"/>
-        <line num="19" count="4" type="stmt"/>
-        <line num="21" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="23" count="3" type="stmt"/>
-        <line num="24" count="3" type="cond" truecount="1" falsecount="1"/>
-        <line num="25" count="3" type="stmt"/>
-        <line num="32" count="3" type="stmt"/>
-        <line num="33" count="2" type="stmt"/>
-        <line num="39" count="3" type="stmt"/>
-        <line num="40" count="3" type="stmt"/>
-        <line num="41" count="3" type="stmt"/>
-        <line num="43" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="45" count="2" type="stmt"/>
-        <line num="46" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="47" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="49" count="2" type="stmt"/>
-        <line num="54" count="2" type="stmt"/>
-        <line num="55" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="56" count="2" type="stmt"/>
-        <line num="65" count="3" type="stmt"/>
-        <line num="66" count="3" type="stmt"/>
-        <line num="67" count="3" type="stmt"/>
-        <line num="68" count="3" type="stmt"/>
-        <line num="70" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="19" count="5" type="stmt"/>
+        <line num="21" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="23" count="4" type="stmt"/>
+        <line num="24" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="32" count="4" type="stmt"/>
+        <line num="33" count="3" type="stmt"/>
+        <line num="39" count="4" type="stmt"/>
+        <line num="40" count="4" type="stmt"/>
+        <line num="41" count="4" type="stmt"/>
+        <line num="43" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="45" count="3" type="stmt"/>
+        <line num="46" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="47" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="49" count="3" type="stmt"/>
+        <line num="54" count="3" type="stmt"/>
+        <line num="55" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="56" count="3" type="stmt"/>
+        <line num="65" count="4" type="stmt"/>
+        <line num="66" count="4" type="stmt"/>
+        <line num="67" count="4" type="stmt"/>
+        <line num="68" count="4" type="stmt"/>
+        <line num="70" count="4" type="stmt"/>
       </file>
     </package>
   </project>
