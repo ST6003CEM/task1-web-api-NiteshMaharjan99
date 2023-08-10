@@ -48,21 +48,14 @@ router.post('/login', (req, res, next) => {
 
                 const payload = {
                     id: user._id,
-                    username: user.username,
-                    fullname: user.fullname,
-                    role: user.role
+                    username: user.username
                 }
 
                 jwt.sign(payload, process.env.SECRET, { expiresIn: '1d' }, (err, encoded) => {
                     if (err) res.status(500).json({ error: err.message })
                     res.json({
-                        message: "Sucessfully LogIn ",
-                        success: true,
                         username: user.username,
-                        token: encoded,
-                        id: id,
-                        email: email,
-                        role: role,
+                        token: encoded
                     })
                 })
             })

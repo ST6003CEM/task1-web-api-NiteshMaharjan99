@@ -1,6 +1,9 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
+const morgan = require("morgan");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const menu_routes = require('./routes/menu_routes')
 const user_routes = require('./routes/user_routes')
@@ -15,10 +18,20 @@ mongoose.connect('mongodb://127.0.0.1:27017/restaurantAPI')
 app.use(express.json())
 app.use(express.static('public'))
 
+
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(morgan("dev"));
+
 app.get('/', (req, res) => {
     res.send("Hello world")   
 })
 
+//routes
+app.use("/api/items", require("./routes/itemRoutes"));
+app.use("/api/users", require("./routes/userRoutes"));
+app.use("/api/bills", require("./routes/billsRoute"));
 app.use('/menus', menu_routes)
 app.use('/orders', order_routes)
 app.use('/users', user_routes)

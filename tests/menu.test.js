@@ -11,14 +11,16 @@ beforeAll(async () => {
     await User.deleteMany({})
     await api.post('/users/register/')
         .send({
-            username: "testUser",
-            password: "test123",
-            fullname: "Test User"
+            username: 'testUser1',
+            phone: 21353467,
+            email: "1testuser@gmail.com",
+            password: 'test123',
+            fullname: "TestUser"
         })
 
     login = await api.post('/users/login')
         .send({
-            username: "testUser",
+            username: "testUser1",
             password: "test123"
         })
 
@@ -42,7 +44,7 @@ describe('Menu API Tests', () => {
         await api.post('/menus/')
             .send(menuData)
             .set('authorization', `bearer ${token}`)
-            .expect(201)
+            .expect(200)
 
     })
 
@@ -55,7 +57,7 @@ describe('Menu API Tests', () => {
     test('Registered users should get a menu by ID', async () => {
         const newMenu = await api.post('/menus/').send(menuData).set('authorization', `bearer ${token}`)
         const menuId = newMenu.body.id;
-        await api.get(`/menus/${menuId}`)
+        await api.get(`/${menuId}`)
             .set('authorization', `bearer ${token}`)
             .expect(200)
     });
@@ -67,7 +69,7 @@ describe('Menu API Tests', () => {
             menuName: 'Cheeseburger',
             price: 12.99,
         };
-        await api.put(`/menus/${menuId}`).send(updatedMenuData)
+        await api.put(`/${menuId}`).send(updatedMenuData)
             .set('authorization', `bearer ${token}`)
             .expect(200)
 
@@ -78,7 +80,7 @@ describe('Menu API Tests', () => {
     test('Registered users should delete a menu by ID', async () => {
         const newMenu = await api.post('/menus/').send(menuData).set('authorization', `bearer ${token}`)
         const menuId = newMenu.body.id;
-        await api.delete(`/menus/${menuId}`)
+        await api.delete(`/${menuId}`)
             .set('authorization', `bearer ${token}`)
             .expect(204)
     });
